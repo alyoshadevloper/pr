@@ -1,0 +1,30 @@
+<div class="indexCarousel">
+{{> carousel}}
+</div>
+
+    <div class="container">
+        <h1>Top Kurslar</h1>
+                <div class="row">
+            {{#if data.length}}
+                {{#each data}}
+                    <div class="col-lg-3 mt-2 mb-2">
+                        <div class="card"  >
+                                <div class="card-img">
+                                       <img src="{{img}}" class="card-img-top" alt=" ">
+                                </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{title}}</h5>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-price">{{price}}</p>
+                                    <p class="card-category"><span>Kategoriya:</span> {{category}}</p>
+                                </div>
+ 
+                            </div>
+                            </div>
+                    </div>
+                {{/each}}
+            {{else}}
+                <p>Hech qanday mahsulot yoq</p>
+            {{/if}}
+        </div>
+    </div>

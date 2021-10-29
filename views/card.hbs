@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  {{#if courses.length}}
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">№</th>
+                <th scope="col">Mahsulotning nomi</th>
+                <th scope="col">Mahsulotning miqdori</th>
+                <th scope="col">Ochirish</th>
+              </tr>
+            </thead>
+          <tbody>
+              {{#each courses as |item i|}}
+               <tr>
+                <th scope="row">{{i}}</th>
+                <td>{{title}}</td>
+                <td>{{count}}</td>
+                <td>
+                  <button class="btn btn-danger delete" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+              {{/each}}
+
+          </tbody>
+        </table>
+        <p class="price-total"><span>Umumiy narxi:</span>
+          <span class="card-price"> {{price}}</span>
+        </p>
+  {{else}}
+      <p class="empty-product">Korzinada hech qanday tovar yoq</p>
+  {{/if}}
+</div>

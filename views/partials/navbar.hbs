@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="?">Study.uz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between flex-grow-0" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        {{#if eIndex}}
+            <li class="nav-item">
+                <a class="nav-link eactive" href="/">Bosh sahifa</a>
+            </li>
+        {{else}}
+            <li class="nav-item">
+                <a class="nav-link" href="/">Bosh sahifa</a>
+            </li>
+        {{/if}}
+        {{#if eCourse}}
+            <li class="nav-item">
+                <a class="nav-link eactive" href="/course">Oquv kurslar</a>
+            </li>
+        {{else}}
+            <li class="nav-item">
+                <a class="nav-link" href="/course">Oquv kurslar</a>
+            </li>
+        {{/if}}
+        {{#if eAdd}}
+            <li class="nav-item">
+                <a class="nav-link eactive" href="/add"> <i class="fas fa-plus"></i> </a>
+            </li>
+        {{else}}
+            <li class="nav-item">
+                <a class="nav-link" href="/add"><i class="fas fa-plus"></i> </a>
+            </li>
+        {{/if}}
+        {{#if eCard}}
+            <li class="nav-item shop_nav">
+                <a class="nav-link eactive" href="/card"><i class="fas fa-shopping-bag"></i> 
+                    <span class="count">{{count}}</span>
+                </a>
+            </li>
+        {{else}}
+            <li class="nav-item shop_nav">
+                <a class="nav-link" href="/card"><i class="fas fa-shopping-bag"></i>
+                 <span class="count">{{count}}</span>
+                 </a>
+            </li>
+        {{/if}}
+    </div>
+  </div>
+</nav>

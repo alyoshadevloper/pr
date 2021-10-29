@@ -1,0 +1,75 @@
+<div class="container">
+  <h1>{{title}} : <span>{{db.title}}</span></h1>
+  <form action="/course/edit" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Kurs nomini yozing</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Kurs nomi"
+        value="{{db.title}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Kurs narxi yozing</label>
+      <input
+        type="text"
+        name="price"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Kurs narxi"
+             value="{{db.price}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Kurs haqida batafsil</label>
+      <textarea
+        name="comment"
+        class="form-control"
+        id=""
+        cols="30"
+        rows="10"
+        required
+        value="{{db.comment}}"
+      > {{db.comment}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Kurs rasmi</label>
+      <input
+        type="text"
+        name="img"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Kurs rasmi"
+        value="{{db.img}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Kategory</label>
+      <select name="category" class="form-control" id="">
+        <option value="">Tanlash</option>
+        <option value="web">web</option>
+        <option value="language">Xorijiy tillar</option>
+        <option value="biznes">biznes</option>
+
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Kurs yuqorida turishni
+        xoxlaysizmi?</label>
+      <div class="d-flex justify-content-center">
+        <input type="radio" name="top"  value="{{db.top}}" class="form-radio add" />
+        Xa
+        <input type="radio" name="top"  value="{{db.top}}" class="form-radio add" />
+        Yoq
+      </div>
+    </div>
+    <input type="hidden" name="id" id="" value="{{db.id}}">
+    <button type="submit" class="btn w-100 bg-warning">Ozgartirish</button>
+  </form>
+</div>
