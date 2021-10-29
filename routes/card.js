@@ -4,8 +4,9 @@ const Course = require('../model/course')
 const router = express.Router()
 
 router.post('/add' , async (req, res) => {
+    console.log(req.ip);
     const db = await Course.getById(req.body.id)
-    await Card.add(db)
+    await Card.add(db , req.ip)
     res.redirect('/card')
 })
 

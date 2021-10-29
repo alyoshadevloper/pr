@@ -3,14 +3,14 @@ const fs = require('fs')
 
 class Card {
 
-    static async add(course){
+    static async add(course ,ips){
+        console.log(ips);
         // console.log(course);
         const card  = await Card.fetch()
         // console.log(card);
         const idx = card.courses.findIndex(c => c.id === course.id)
-        console.log(idx);
         const candidate = card.courses[idx]
-        console.log(candidate);
+        course.ip = ips
         if(candidate){
             /// kurs korzinadan bolsa miqdorini bittaga kopaytirish
             candidate.count++
