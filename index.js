@@ -6,7 +6,7 @@ const rCourse = require('./routes/course')
 const rCard= require('./routes/card')
 const rAdd = require('./routes/add')
 const app = express()
-
+const port = process.env.PORT || 3000
 /// Setting ENGINE-HANDLEBARS
 
 const exbs = exhbs.create({
@@ -35,6 +35,6 @@ app.use('/add' , rAdd)
 
 /// Setting Starting SERVER
 
-app.listen(3001 , () => {
+app.listen(port , () => {
     console.log(`server is running on 3001 port`);
 })
