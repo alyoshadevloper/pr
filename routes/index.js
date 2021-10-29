@@ -4,6 +4,7 @@ const Card = require('../model/card')
 const router = express.Router()
 
 router.get('/' , async (req , res) => {
+    console.log(req.ip);
      const db =  await Course.sortByTop()
      const count = await Card.counts()
    
