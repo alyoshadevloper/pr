@@ -20,9 +20,10 @@ router.delete('/remove/:id' , async (req,  res) => {
 router.get('/' , async (req , res) => {
     
     const db = await Card.fetch()
+    const count = await Card.counts()
     db.courses.forEach(element => {
             if(element.ip == req.ip){
-                const count = await Card.counts()
+          
                 res.render('card' , {
                     title : "Korzina sahifa",
                     eCard: true,
