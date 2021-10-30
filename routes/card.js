@@ -4,7 +4,7 @@ const Course = require('../model/course')
 const router = express.Router()
 
 router.post('/add' , async (req, res) => {
-    console.log(req.ip);
+
     const db = await Course.getById(req.body.id)
     await Card.add(db , req.ip)
     res.redirect('/card')
@@ -18,12 +18,10 @@ router.delete('/remove/:id' , async (req,  res) => {
 
 
 router.get('/' , async (req , res) => {
-    
-    const db = await Card.fetch()
+     
+    const db = await Card.fetch(req.ip)
     const count = await Card.counts()
-    db.courses.forEach(element => {
-            if(element.ip == req.ip){
-          
+                   
                 res.render('card' , {
                     title : "Korzina sahifa",
                     eCard: true,
@@ -31,8 +29,8 @@ router.get('/' , async (req , res) => {
                     price : db.price,
                     count
                 })
-            }
-    });
+            
+                
 
 })
 

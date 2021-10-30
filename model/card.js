@@ -4,7 +4,7 @@ const fs = require('fs')
 class Card {
 
     static async add(course ,ips){
-        console.log(ips);
+        // console.log(ips);
         // console.log(course);
         const card  = await Card.fetch()
         // console.log(card);
@@ -69,14 +69,28 @@ class Card {
         return num
     }
 
-    static async fetch() {
+    static async fetch(ips ) {
+ 
         return new Promise((resolve , reject) => {
             fs.readFile(path.join(__dirname , ".." , 'data' , 'card.json') , 'utf-8' , (err, data) => {
                 // console.log(data);
                 if(err){
                     reject(err)
                 }else{
-                    resolve(JSON.parse(data))
+                         
+                            const datsa = JSON.parse(data)
+                             let arr = []
+                                datsa.courses.forEach( (element , val)   => {
+                                        if(element.ip === ips){
+                                            arr.push(element)
+                                            datsa.courses = arr
+                                        }
+                                });
+                                resolve(datsa)
+                             
+                        // // console.log(datsa);
+            
+                   
                 }
             })
         })
